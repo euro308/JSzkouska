@@ -1,0 +1,12 @@
+table {
+    background: linear-gradient(90deg, rgba(255,255,255,0.0034138655462184753) 0%, rgba(0,0,0,1) 6%, rgba(255,255,255,1) 13%, rgba(0,0,0,1) 28%, rgba(255,255,255,1) 42%, rgba(0,0,0,1) 52%, rgba(255,255,255,1) 60%, rgba(0,0,0,1) 71%, rgba(255,255,255,1) 83%, rgba(0,0,0,1) 92%, rgba(255,255,255,1) 100%);;
+    text-align: center;
+    color: white;
+    width: 1000px;
+    height: 500px;
+    margin: 0;
+}
+
+td:hover {
+    background: purple;
+}
