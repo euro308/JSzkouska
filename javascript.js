@@ -19,7 +19,7 @@ inputText.type = "text"
 inputText.placeholder = "New Task"
 
 let addButton = document.createElement("button")
-addButton.classList.add("buttons")
+addButton.classList.add("addButton")
 addButton.innerText = "Add"
 addButton.addEventListener("click", function () {
     addElement(inputText);
@@ -33,6 +33,7 @@ function addElement(input) {
     newItem.classList.add("newItem")
 
     let buttonDiv = document.createElement("div")
+    buttonDiv.classList.add("buttonDiv")
 
     let itemText = document.createElement("span")
     itemText.innerText = input.value
@@ -45,7 +46,16 @@ function addElement(input) {
         removeElement(newItem);
     });
 
+    let editButton = document.createElement("button")
+    editButton.classList.add("buttons")
+    editButton.innerText = "Edit"
+    editButton.addEventListener("click", function () {
+        let newValue = prompt("Write the new To-Do thing")
+        editElement(itemText, newValue);
+    });
+
     buttonDiv.append(removeButton)
+    buttonDiv.append(editButton)
 
     newItem.append(itemText)
     newItem.append(buttonDiv)
@@ -56,7 +66,9 @@ function removeElement(input) {
     input.remove();
 }
 
+function editElement(input, newInput) {
+    input.innerText = newInput
+}
+
 div.append(inputDiv)
 body.append(div)
-
-

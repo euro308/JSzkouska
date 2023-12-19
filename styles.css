@@ -34,9 +34,27 @@
     font-size: 20px;
 }
 
+.addButton {
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
 .buttons {
     width: 100px;
     height: 50px;
+    background-color: white;
+    color: red;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.buttonDiv {
+    display: flex;
+    gap: 1em;
 }
 
 .newItem {
@@ -47,5 +65,6 @@
     justify-content: space-between;
     align-items: center;
 }
+
 
 
