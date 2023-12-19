@@ -1,12 +1,51 @@
-table {
-    background: linear-gradient(90deg, rgba(255,255,255,0.0034138655462184753) 0%, rgba(0,0,0,1) 6%, rgba(255,255,255,1) 13%, rgba(0,0,0,1) 28%, rgba(255,255,255,1) 42%, rgba(0,0,0,1) 52%, rgba(255,255,255,1) 60%, rgba(0,0,0,1) 71%, rgba(255,255,255,1) 83%, rgba(0,0,0,1) 92%, rgba(255,255,255,1) 100%);;
-    text-align: center;
-    color: white;
-    width: 1000px;
-    height: 500px;
-    margin: 0;
+.div {
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
 }
 
-td:hover {
-    background: purple;
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Comic Sans MS, serif;
 }
+
+.name {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.inputDiv {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputText {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.buttons {
+    width: 100px;
+    height: 50px;
+}
+
+.newItem {
+    width: 380px;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    justify-content: space-between;
+    align-items: center;
+}
+
+

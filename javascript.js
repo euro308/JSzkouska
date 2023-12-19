@@ -1,33 +1,62 @@
-document.body.onload = tableCreate;
+let div = document.createElement("div")
+div.classList.add("div")
 
-const words = ["Bob", "Petr", "Adam", "Roman", "Jaroslav", "Lukáš", "Kuba", "Brno je trash"]
+let body = document.getElementsByTagName("body")[0];
+body.classList.add("body")
 
+let name = document.createElement("span")
+name.classList.add("name")
+name.innerText = "To-Do List"
 
-function tableCreate() {
-    let body = document.getElementsByTagName("body")[0];
+div.append(name)
 
-    let table = document.createElement("table");
-    let tableBody = document.createElement("tbody");
+let inputDiv = document.createElement("div")
+inputDiv.classList.add("inputDiv")
 
-    for (let i = 0; i <= 10; i++) {
-        let row = document.createElement("tr");
+let inputText = document.createElement("input")
+inputText.classList.add("inputText")
+inputText.type = "text"
+inputText.placeholder = "New Task"
 
-        for (let j = 0; j < 10; j++) {
-            let tableData = document.createElement("td");
-            let dataText = document.createTextNode(words[j]);
+let addButton = document.createElement("button")
+addButton.classList.add("buttons")
+addButton.innerText = "Add"
+addButton.addEventListener("click", function () {
+    addElement(inputText);
+});
 
-            tableData.appendChild(dataText);
-            row.appendChild(tableData);
-    }
+inputDiv.append(inputText)
+inputDiv.append(addButton)
 
-    //row added to end of table body
-    tableBody.appendChild(row);
+function addElement(input) {
+    let newItem = document.createElement("div")
+    newItem.classList.add("newItem")
+
+    let buttonDiv = document.createElement("div")
+
+    let itemText = document.createElement("span")
+    itemText.innerText = input.value
+    itemText.style.fontSize = "50px"
+
+    let removeButton = document.createElement("button")
+    removeButton.classList.add("buttons")
+    removeButton.innerText = "Remove"
+    removeButton.addEventListener("click", function () {
+        removeElement(newItem);
+    });
+
+    buttonDiv.append(removeButton)
+
+    newItem.append(itemText)
+    newItem.append(buttonDiv)
+    div.append(newItem)
 }
 
-// append the <tbody> inside the <table>
-table.appendChild(tableBody);
-// put <table> in the <body>
-body.appendChild(table);
-// tbl border attribute to
-table.setAttribute("border", "1");
+function removeElement(input) {
+    input.remove();
 }
+
+div.append(inputDiv)
+body.append(div)
+
+
