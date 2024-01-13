@@ -1,70 +1,109 @@
-.div {
-    width: 400px;
-    height: 600px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1em;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
 }
 
-.body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Comic Sans MS, serif;
-}
-
-.name {
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.inputDiv {
-    width: 320px;
+.header {
+    background-color: white;
+    border-bottom: 1px solid black;
     display: flex;
     justify-content: space-between;
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
     align-items: center;
 }
 
-.inputText {
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
+.right {
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.addButton {
-    width: 100px;
-    height: 50px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-.buttons {
-    width: 100px;
-    height: 50px;
+.header button {
+    height: 40px;
     background-color: white;
-    color: red;
     border: 1px solid lightgray;
     border-radius: 5px;
+    font-size: 15px;
 }
 
-.buttonDiv {
+.uptimescore {
+    margin-top: 30px;
+    width: 500px;
+    height: 150px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: white;
+    padding-left: 20px;
     display: flex;
-    gap: 1em;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
-.newItem {
-    width: 380px;
-    height: 100px;
+.uptimedetails {
+    margin-top: 30px;
+    width: 500px;
+    height: 200px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-left: 20px;
+    padding-left: 20px;
     display: flex;
-    border-bottom: 1px solid lightgray;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+}
+
+.line {
+    display: flex;
+    width: 480px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
+.line div {
+    width: 35px;
+    height: 5px;
+    display: block;
+    border-radius: 25px;
+}
 
+.green {
+    width: 35px;
+    height: 5px;
+    display: block;
+    border-radius: 25px;
+    background-color: #2cc864;
+}
 
+.yellow {
+    background-color: #ecb711;
+}
+
+.red {
+    background-color: #f04d4d;
+}
+
+.uptime {
+    font-size: 25px;
+}
+
+.alert {
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f04d4d;
+    color: white;
+    position: absolute;
+    right: 1%;
+    bottom: 2%;
+}
