@@ -1,60 +1,85 @@
-let comments = [
-    {
-        name: "Bob",
-        date: "2020-12-12T12:30:00Z",
-        text: "Nemám rád lidi.",
-        pfp: "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
-    },
-    {
-        name: "Jaroslava",
-        date: "2023-12-12T13:20:12Z",
-        text: "Hledám pravou lásku.",
-        pfp: "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
-    },
-    {
-        name: "Oliver",
-        date: "1997-12-12T14:05:21Z",
-        text: "Je mi 16 let.",
-        pfp: "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+let leftDiv = document.querySelector(".left")
+
+let title = document.querySelector(".title")
+let priority = document.querySelector(".priority")
+let setDate = document.querySelector(".date")
+
+let button = document.querySelector(".save")
+
+
+button.addEventListener("click", () => {
+
+    if (validateTitle() && validateMonth() && validatePriority()) {
+
+        let newDiv = document.createElement("div")
+        newDiv.classList.add("ukol")
+
+        let ukolTitle = document.createElement("h2")
+        ukolTitle.innerHTML = title.value
+
+        let ukolPriority = document.createElement("span")
+        ukolPriority.innerHTML = `Priorita: ${priority.value}`
+
+        let ukolDate = document.createElement("span")
+        ukolDate.innerHTML = `Měsíc: ${setDate.value}`
+        document.createElement("br");
+        let currentDate = new Date();
+        let month = currentDate.getMonth()
+
+
+        if (month + 1 >= setDate.value) {
+            ukolDate.style.backgroundColor = "red"
+        }
+
+        let underDiv = document.createElement("div")
+        underDiv.classList.add("under")
+
+        newDiv.append(ukolTitle)
+
+        underDiv.append(ukolPriority)
+        underDiv.append(ukolDate)
+        newDiv.append(underDiv)
+
+        leftDiv.append(newDiv)
+    } else {
+        alert("Cannot send, some input did not pass the inspection!")
     }
-];
+})
 
-for (let i = 0; i < comments.length; i++) {
-    let body = document.getElementsByTagName("body")[0];
+function validateTitle() {
 
-    let createDiv = document.createElement("div");
-    createDiv.className = "comment";
+    if (title.value.length > 100) {
+        alert("Title is too long!")
+        return false
+    }
 
-    let nameElement = document.createElement("span");
-    nameElement.style.fontWeight = "bold";
-    nameElement.innerText = comments[i].name;
-
-    let imageElement = document.createElement("img");
-    imageElement.className = "img";
-    imageElement.src = comments[i].pfp;
-
-    let dateElement = document.createElement("span");
-    dateElement.innerText = new Date(comments[i].date).toLocaleString()
-
-    let textElement = document.createElement("span");
-    textElement.innerText = comments[i].text;
-
-    let removeButton = document.createElement("button");
-    removeButton.style.width = "100px";
-    removeButton.innerText = "Smaž mne!";
-    removeButton.addEventListener("click", function () {
-        funkcePoKliknuti(createDiv);
-    });
-
-    createDiv.appendChild(imageElement);
-    createDiv.appendChild(nameElement);
-    createDiv.appendChild(dateElement);
-    createDiv.appendChild(textElement);
-    createDiv.appendChild(removeButton);
-
-    body.appendChild(createDiv);
+    if (title.value.length === 0) {
+        alert("Title is blank!")
+        return false
+    }
+    return true
 }
 
-function funkcePoKliknuti(div) {
-    div.remove();
+function validateMonth() {
+
+    if (setDate.value > 12) {
+        alert("Date is invalid!")
+        return false
+    }
+
+    if (setDate.value.length === 0) {
+        alert("Date is blank!")
+        return false
+    }
+    return true
 }
+
+function validatePriority() {
+
+    if (priority.value.length === 0) {
+        alert("Priority is not chosen!")
+        return false
+    }
+    return true
+}
+

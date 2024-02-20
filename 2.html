@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type ="module" src="javascript2.js"></script>
+    <script type="module" src="javascript2.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<style>
-.comment {
-    display: flex;
-    width: 1000px;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-}
-
-.img {
-    width: 50px;
-    height: 50px;
-    border-radius: 99px;
-    vertical-align: center;
-}
-</style>
 <body>
+<h1>Úkoly</h1>
+<section>
+    <div class="left"></div>
 
+    <div class="right">
+        <div class="formular">
+                <label>
+                    <input type="text" placeholder="Titulek" class="title">
+                </label>
+
+            <p>
+                <br>
+                <label>
+                    <select class="priority">
+                        <option value="" disabled selected>Priorita</option>
+                        <option value="Nízká">Nízká</option>
+                        <option value="Střední">Střední</option>
+                        <option value="Vysoká">Vysoká</option>
+                    </select>
+                </label>
+                <br>
+            </p>
+
+            <p>
+                <br>
+                <label>
+                    <input type="number" placeholder="Datum" class="date">
+                </label>
+            </p>
+            <p>
+                <button class="save">Uložit</button>
+            </p>
+        </div>
+    </div>
+</section>
 
 
 </body>
